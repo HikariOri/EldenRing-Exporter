@@ -161,7 +161,7 @@ public sealed class ExportWorkflow
 
     private static async Task RunWitchyAsync(Path witchy, Path target)
     {
-        var result = await ProcessRunner.RunAsync(witchy.FullName, new[] { target.FullName });
+        var result = await ProcessRunner.RunAsync(witchy.FullName, new[] { "--passive", target.FullName });
         if (result.ExitCode != 0)
             throw new CliException($"WitchyBND failed for {target} with exit code {result.ExitCode}.");
     }
