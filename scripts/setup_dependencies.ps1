@@ -38,12 +38,12 @@ try {
         Expand-Archive -LiteralPath $soulstructZip -DestinationPath $soulstructAddonRoot -Force
     }
 
-    $witchyVersion = "3.0.0.1"
-    $witchyZipUrl = "https://github.com/ividyon/WitchyBND/releases/download/v$witchyVersion/WitchyBND-v$witchyVersion-win-x64.zip"
+    $witchyVersion = "3.0.1.0"
+    $witchyZipUrl = "https://github.com/ividyon/WitchyBND/releases/download/$witchyVersion/WitchyBND-$witchyVersion-win-x64.zip"
     $witchyInstallRoot = Join-Path $repoRoot "external\WitchyBND-release"
-    $witchyRoot = Join-Path $witchyInstallRoot "WitchyBND-v$witchyVersion-win-x64"
+    $witchyRoot = Join-Path $witchyInstallRoot "WitchyBND-$witchyVersion-win-x64"
     $witchyExe = Join-Path $witchyRoot "WitchyBND.exe"
-    $witchyZip = Join-Path $witchyInstallRoot "WitchyBND-v$witchyVersion-win-x64.zip"
+    $witchyZip = Join-Path $witchyInstallRoot "WitchyBND-$witchyVersion-win-x64.zip"
 
     if ($Force -and (Test-Path $witchyRoot)) {
         Remove-Item -LiteralPath $witchyRoot -Recurse -Force
